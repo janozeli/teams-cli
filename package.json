@@ -1,0 +1,51 @@
+{
+  "name": "teams-cli",
+  "version": "0.1.0",
+  "description": "A CLI for AI agents to work with Microsoft Teams through a local desktop session",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "teams-cli": "dist/bin/teams-cli.js",
+    "teams-cli-context": "dist/bin/teams-cli-context.js"
+  },
+  "files": [
+    "dist",
+    "skills/teams-cli",
+    "schemas",
+    "docs",
+    "README.md",
+    "AGENTS.md",
+    "BACKLOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "LICENSE",
+    "src/vendor/axi-hooks/LICENSE",
+    "src/vendor/axi-hooks/README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/bin/teams-cli.js dist/bin/teams-cli-context.js",
+    "dev": "tsx bin/teams-cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build:skill": "tsx scripts/build-skill.ts",
+    "check:skill": "tsx scripts/build-skill.ts --check",
+    "test:browser": "vitest run test/interaction-browser.test.ts",
+    "test:joint": "tsx scripts/check-interaction.ts"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "playwright": "^1.63.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "license": "MIT"
+}

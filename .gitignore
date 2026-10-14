@@ -1,0 +1,24 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+
+# Local experiments, exports and runtime data
+.scratch/
+.private/
+exports/
+traces/
+playwright-report/
+test-results/
+*.log
+*.tgz
+
+# Local credentials and agent configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/
+.codex/
+.opencode/
